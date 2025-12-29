@@ -40,23 +40,23 @@ login-artifact-registry:
 	gcloud auth configure-docker us-central1-docker.pkg.dev
 
 build-image:
-	docker buildx build --platform linux/amd64 -t us-central1-docker.pkg.dev/<project_id>/bus-stop-api/api .
+	docker buildx build --platform linux/amd64 -t us-central1-docker.pkg.dev/project-c81c4edd-4dfa-4b1c-bf8/bus-stop-api/api .
 
 
 create-repository:
 	gcloud artifacts repositories create bus-stop-api \
 		--repository-format=docker \
 		--location=us-central1 \
-		--description="Docker repository for bus-stop API"
+		--description="Docker repository for Auckland Bus Stop API"
 
 push-image:
-	docker push us-central1-docker.pkg.dev/<project_id>/bus-stop-api/api
+	docker push us-central1-docker.pkg.dev/project-c81c4edd-4dfa-4b1c-bf8/bus-stop-api/api
 
 deploy-cloudrun:
 	gcloud run deploy bus-stop-api \
-		--image us-central1-docker.pkg.dev/<project_id>/bus-stop-api/api \
+		--image us-central1-docker.pkg.dev/project-c81c4edd-4dfa-4b1c-bf8/bus-stop-api/api \
 		--region us-central1 \
-		--set-env-vars API_KEY=<your_api_key_here> \
+		--set-env-vars API_KEY=auckland-bus-stop_KThuXqIVRbdt8b4gK9leJMJJvRXtlwAZ \
 		--memory 256Mi \
 		--cpu 1 \
 		--max-instances 1 \

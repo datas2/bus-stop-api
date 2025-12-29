@@ -9,7 +9,7 @@ Read more in [Auckland Transport Open GIS Data](https://data-atgis.opendata.arcg
 ---
 ## Context & Question
 ### Why does this API exist?
-
+This API is a public utility. It may change or be discontinued without notice.
 --- 
 ## What It Is — and What It Is Not
 ### Scope and non-goals
